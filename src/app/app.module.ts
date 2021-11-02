@@ -12,6 +12,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
 //Componentes de Material
 import {MatButtonModule} from '@angular/material/button'; // Importa el API de botones de Angular Material
 import {MatInputModule} from '@angular/material/input'; //Importa el API de crear textbox
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MatInputModule} from '@angular/material/input'; //Importa el API de crea
     BrowserAnimationsModule,
     FormsModule,
     MatButtonModule, //Activa el API de botones de Angular Material
-    MatInputModule //Activa el API de textbox
+    MatInputModule, //Activa el API de textbox
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
