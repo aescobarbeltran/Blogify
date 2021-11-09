@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Post } from '../models/post.model'; //Importa Post de Angular
 
@@ -11,7 +11,7 @@ export class CreatePostComponent implements OnInit {
 
   content: string = "Hola a todos";
   texto: string = "";
-  posts: Post[] = []; // crea el componente Post
+  @Output() createPost = new EventEmitter<Post>();
 
   constructor() { }
 
@@ -22,7 +22,9 @@ export class CreatePostComponent implements OnInit {
   }
 
   addPost(form:NgForm) {
-    console.log(form);
-    this.posts.push(form.value); // Uso del componente Post
+    if(form.valid){
+    this.createPost.emit(form.value);
+    form.resetForm();
+    }
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Post } from './models/post.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  storedPost: Post [] = [];
+
   title = 'blogify';
+
+savePost(post: Post) {
+  this.storedPost.push(post)
+}
 }
