@@ -1,6 +1,11 @@
 <main>
   <p>Este sería el encabezado</p>
    <!-- <router-outlet></router-outlet> -->
+
+    <h3>
+      Hola
+    </h3>
+
    <app-create-post (createPost)="savePost($event)"></app-create-post>
    <app-post-list [posts]="storedPosts"></app-post-list>
   <p>Este sería el pie de página</p>
